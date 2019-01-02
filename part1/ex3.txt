@@ -1,0 +1,2 @@
+docker run -it ubuntu sh -c 'apt update; apt install -y curl; read website; sleep 3; curl http://$website;'
+
