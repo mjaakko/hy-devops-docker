@@ -1,0 +1,5 @@
+docker run -d -e FRONT_URL=http://localhost:5000 -p 8000:8000 backend-example
+
+docker run -d -e API_URL=http://localhost:8000 -p 5000:5000 frontend-example
+
+
