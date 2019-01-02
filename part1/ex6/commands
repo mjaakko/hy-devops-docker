@@ -1,0 +1,4 @@
+docker build -t backend-example .
+
+docker run -v $(pwd)/logs.txt:/logs.txt -d -p 8000:8000 backend-example
+
