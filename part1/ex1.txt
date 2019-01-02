@@ -1,0 +1,4 @@
+CONTAINER ID        IMAGE                        COMMAND                  CREATED              STATUS                        PORTS               NAMES
+2204b4e5990d        hsldevcom/digitransit-site   "/bin/sh -c 'serve -…"   About a minute ago   Exited (137) 41 seconds ago                       agitated_elion
+608f3b7b431a        redis                        "docker-entrypoint.s…"   6 minutes ago        Exited (0) 6 minutes ago                          elegant_goldstine
+9ea675e66f96        nginx                        "nginx -g 'daemon of…"   11 minutes ago       Up 11 minutes                 80/tcp              recursing_zhukovsky
