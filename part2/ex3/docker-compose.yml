@@ -1,0 +1,39 @@
+version: '3'
+
+volumes:
+  db:
+
+services:
+
+  db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=hunter2
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  redis:
+    image: redis
+    ports:
+      - 6379:6379    
+
+  frontend:
+    image: frontend-example
+    ports:
+      - 5000:5000
+    environment: 
+      - API_URL=http://localhost:8000
+
+  backend:
+    image: backend-example
+    ports:
+      - 8000:8000
+    depends_on: 
+      - db
+    environment:
+      - FRONT_URL=http://localhost:5000
+      - REDIS=redis
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=hunter2
+      - DB_HOST=db
