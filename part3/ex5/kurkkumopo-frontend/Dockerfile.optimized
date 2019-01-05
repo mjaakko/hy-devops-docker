@@ -1,0 +1,16 @@
+FROM node:8.9.4-alpine
+
+RUN mkdir -p /usr/src/app
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+
+RUN npm i && \
+    npm run build && \
+    npm install -g serve && \
+    adduser -D app
+
+EXPOSE 3000
+
+USER app
+
+CMD ["serve", "-s", "-l", "3000", "build"]
