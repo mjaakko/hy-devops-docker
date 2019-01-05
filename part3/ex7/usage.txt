@@ -1,0 +1,7 @@
+docker run -it \
+  -v /var/run/docker.sock:/var/run/docker.sock:ro \
+  -e DOCKER_USER=' ' \
+  -e DOCKER_PASS=' ' \
+  -e DOCKER_TAG=' ' \
+  -e GIT_URL=' ' \
+  dockerbuilder
